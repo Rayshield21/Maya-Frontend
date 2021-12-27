@@ -1,0 +1,12 @@
+MUST DO
+
+  UIService
+    states
+      modalFormShow: True, False
+      writeAction: Add, Edit
+    * Triggers when add or edit button is pressed.
+    component interaction
+      FormModal
+      header component(add button)
+      person -> person-item component (editbutton)
+    
