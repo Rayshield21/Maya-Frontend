@@ -1,0 +1,5 @@
+<div class='grid gap-5 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
+  <ng-container *ngFor="let person of persons">
+    <app-person-item [person]="person" class='w-full'></app-person-item>
+  </ng-container>  
+</div>

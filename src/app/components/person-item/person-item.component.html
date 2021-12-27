@@ -1,0 +1,12 @@
+<div class='p-5 bg-purple rounded-md font-bold text-lg'>
+  <p>Name: {{person.name}}</p>
+  <p>Age: {{person.age}}</p>
+  <div class="flex gap-2 justify-end">
+    <app-button (btnClick)="deletePerson(person)">
+      <app-icon iconName='faTrashAlt'></app-icon>
+    </app-button>
+    <app-button (btnClick)="triggerEdit(person)">
+      <app-icon iconName='faEdit'></app-icon>
+    </app-button>
+  </div>
+</div>  

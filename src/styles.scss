@@ -1,1 +1,28 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
+
+
+@layer base{
+  body{
+    @apply bg-indigo;
+  }
+}
+
+@layer utilities{
+  .btn, .btn-md, .btn-lg{
+    @apply font-bold
+  }
+  .btn{
+    @apply px-2 py-2;
+  }
+  .btn-md{
+    @apply px-3 py-3
+  }
+  .btn-lg{
+    @apply px-4 py-4
+  }
+}

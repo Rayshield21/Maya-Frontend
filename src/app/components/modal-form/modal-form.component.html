@@ -1,0 +1,30 @@
+<div class='bg-white rounded-md p-5 fixed top-28 left-1/2 w-3/4 sm:w-1/2 transform -translate-x-1/2 z-50'>
+  <div class="modal-header flex justify-between mb-5">
+    <h1 class='text-2xl text-bold'>{{action}} Person</h1>
+    <app-button (btnClick)="closeModal()">
+      <app-icon iconName="faTimes"></app-icon>
+    </app-button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]='personForm' (ngSubmit)='submit()'>
+      <div class="flex flex-col mb-3 gap-3">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter person's name" class='rounded-md ' formControlName="name"/>
+        <div class="bg-red-200 rounded-md p-3" *ngIf="name?.invalid && name?.touched">
+          <p class="text-red-600">*Name is required</p>
+        </div>
+      </div>
+      <div class="flex flex-col mb-3 gap-3">
+        <label for="name">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Enter person's age" class='rounded-md' formControlName="age"/>
+        <div class="bg-red-200 rounded-md p-3" *ngIf="age?.invalid && age?.touched">
+          <p class="text-red-600" *ngIf="age?.errors?.['required']">*Name is required</p>
+          <p class="text-red-600" *ngIf="age?.errors?.['min']">*Person must be 18 and older</p>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <button type='submit' class='btn bg-teal rounded-md disabled:bg-gray-400' [disabled]="!personForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
